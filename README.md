@@ -1,6 +1,6 @@
 <div align="center">
 
-## FixBi: Bridging Domain Spaces for Unsupervised Domain Adaptation (CVPR 2021)
+## FixBi: Bridging Domain Spaces for Unsupervised Domain Adaptation
   
 [![PWC](https://img.shields.io/badge/State%20of%20the%20Art-Office--31-b31b1b.svg)](https://paperswithcode.com/sota/domain-adaptation-on-office-31?p=fixbi-bridging-domain-spaces-for-unsupervised)
   [![PWC](https://img.shields.io/badge/State%20of%20the%20Art-Office--Home-b31b1b.svg)](https://paperswithcode.com/sota/domain-adaptation-on-office-home?p=fixbi-bridging-domain-spaces-for-unsupervised)
