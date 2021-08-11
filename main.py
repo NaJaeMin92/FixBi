@@ -65,15 +65,15 @@ def main():
 
     net_sd, head_sd, classifier_sd = utils.load_net(args, net_sd, head_sd, classifier_sd)
     net_td, head_td, classifier_td = copy.deepcopy(net_sd), copy.deepcopy(head_sd), copy.deepcopy(classifier_sd)
-
+    
+    loaders = [src_train_loader, tgt_train_loader]
+    optimizers = [optimizer_sd, optimizer_td]
+    models_sd = [net_sd, head_sd, classifier_sd]
+    models_td = [net_td, head_td, classifier_td]
+    sp_params = [sp_param_sd, sp_param_td]
+    losses = [ce, mse]
+    
     for epoch in range(args.epochs):
-        loaders = [src_train_loader, tgt_train_loader]
-        optimizers = [optimizer_sd, optimizer_td]
-        models_sd = [net_sd, head_sd, classifier_sd]
-        models_td = [net_td, head_td, classifier_td]
-        sp_params = [sp_param_sd, sp_param_td]
-        losses = [ce, mse]
-
         train_fixbi(args, loaders, optimizers, models_sd, models_td, sp_params, losses, epoch)
 
         utils.evaluate(nn.Sequential(*models_sd), tgt_test_loader)
