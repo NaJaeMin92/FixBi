@@ -79,8 +79,6 @@ def evaluate(models, loader):
     print("Eval time: {:.2f}".format(time.time() - start))
     set_model_mode('train', [models])
 
-    return (correct / total) * 100
-
 
 def get_sp_loss(input, target, temp):
     criterion = nn.NLLLoss(reduction='none').cuda()
@@ -129,5 +127,3 @@ def final_eval(models_sd, models_td, tgt_test_loader):
     print('Final Accuracy: {:.2f}%'.format((correct / total) * 100))
     set_model_mode('train', [*models_sd])
     set_model_mode('train', [*models_td])
-
-    return (correct / total) * 100
