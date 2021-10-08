@@ -91,7 +91,7 @@ def get_target_preds(args, x):
     top_label = top_label.squeeze().t()
     top_prob = top_prob.squeeze().t()
     top_mean, top_std = top_prob.mean(), top_prob.std()
-    threshold = top_mean - args.th * top_prob
+    threshold = top_mean - args.th * top_std
     return top_label, top_prob, threshold
 
 
