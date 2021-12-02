@@ -64,7 +64,7 @@ def train_fixbi(args, loaders, optimizers, models_sd, models_td, sp_params, loss
             sp_mask_sd = torch.lt(top_prob_sd, threshold_sd)
             sp_mask_sd = torch.nonzero(sp_mask_sd).squeeze()
 
-            sp_mask_td = torch.lt(top_prob_sd, threshold_td)
+            sp_mask_td = torch.lt(top_prob_td, threshold_td)
             sp_mask_td = torch.nonzero(sp_mask_td).squeeze()
 
             if sp_mask_sd.dim() > 0 and sp_mask_td.dim() > 0:
